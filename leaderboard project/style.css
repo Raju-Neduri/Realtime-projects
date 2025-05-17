@@ -1,0 +1,654 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #c9d6ff, #e2e2e2);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  position: relative; /* For absolute positioning of toggle button */
+}
+.theme-toggle-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: #0078d4; /* Blue color */
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 6px 10px;
+  transition: color 0.3s ease;
+  z-index: 1000;
+  outline-offset: 2px;
+}
+
+.theme-toggle-btn:hover,
+.theme-toggle-btn:focus {
+  color: #005a9e; /* Darker blue on hover/focus */
+  outline: none;
+}
+
+/* Title */
+.main_title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 28px;
+  color: #222;
+}
+
+/* Form */
+.main_form {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.main_form input,
+.main_form select {
+  flex: 1 1 160px;
+  max-width: 180px;
+  padding: 10px 14px;
+  border: 1.8px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.25s ease;
+}
+
+.main_form input:focus,
+.main_form select:focus {
+  border-color: #0078d4;
+  background: #f0f8ff;
+}
+
+.main_form-submit-btn {
+  flex: 0 0 140px;
+  background: #0078d4;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.main_form-submit-btn:hover {
+  background: #005a9e;
+}
+
+/* Error Message */
+.main_error-prompter {
+  color: #d93025;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  display: none;
+}
+
+/* Search & Sort */
+.search-sort-container {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+
+#sortSelect {
+  padding: 10px 14px;
+  border: 1.8px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.25s ease;
+}
+
+#searchInput {
+  width: 250px; /* Or more, like 300px if space allows */
+  max-width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: width 0.3s ease;
+}
+
+#searchInput:focus,
+#sortSelect:focus {
+  border-color: #0078d4;
+  background: #f0f8ff;
+}
+
+/* Scoreboard Container */
+.main_scoreboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Player Row */
+.main_scoreboard {
+  background: linear-gradient(120deg, #f6f9fc, #dbe9ff);
+  border-radius: 12px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: background 0.25s ease, opacity 0.4s ease, transform 0.4s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.main_scoreboard:hover {
+  background: #e6f0ff;
+}
+
+/* Rank + Arrow + Info */
+.main_scoreboard > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+/* Rank */
+.main_player-rank {
+  width: 36px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #f0a500;
+  text-align: center;
+}
+
+/* Arrow */
+.arrow-up,
+.arrow-down,
+.arrow-placeholder {
+  width: 20px;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.arrow-up {
+  color: green;
+}
+.arrow-down {
+  color: red;
+}
+
+/* Name + Timestamp */
+.main_scoreboard > div:first-child > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.main_player-name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.main_time-stamp {
+  font-size: 0.78rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Gender */
+span.gender {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #b7b1b1;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Country */
+.main_player-country {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #444;
+  min-width: 90px;
+  text-align: center;
+  margin-left: auto;
+  padding-left: 12px;
+}
+
+/* Score Controls */
+.main_player-score {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.main_player-score span {
+  min-width: 24px;
+  text-align: center;
+}
+
+.main_player-score button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  width: 30px;
+  height: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.main_player-score button:hover {
+  background: #0056b3;
+}
+
+/* Delete Button */
+.main_scoreboard-btn-container {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+.main_scoreboard-btn-container button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.main_scoreboard-btn-container button:hover {
+  color: #d93025;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+.fade-out {
+  animation: fadeOut 0.4s ease forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* MOBILE-SPECIFIC STYLES (≤ 480px) */
+@media (max-width: 480px) {
+  /* 1. Form inputs and button full-width + taller */
+  .main_form input,
+  .main_form select,
+  #searchInput,
+  #sortSelect {
+    width: 100% !important;
+    height: 50px !important;
+    line-height: 50px !important;
+    padding: 12px 14px;
+    font-size: 1rem;
+  }
+
+  .main_form-submit-btn {
+    width: 100% !important;
+    height: 50px !important;
+    line-height: 50px !important;
+    font-size: 1rem;
+  }
+
+  /* 2. Space between form elements */
+  .main_form > * {
+    margin-bottom: 12px;
+  }
+
+  /* 3. Title slightly smaller and spaced */
+  .main_title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 20px;
+  }
+
+  /* 4. Scoreboard row stacked vertically like cards */
+  .main_scoreboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  /* 5. Rank + arrow center stacked */
+  .main_scoreboard > div:first-child {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 4px;
+  }
+  .main_player-rank,
+  .arrow-up,
+  .arrow-down,
+  .arrow-placeholder {
+    width: auto;
+    text-align: center;
+  }
+
+  /* 6. Center name + timestamp */
+  .main_scoreboard > div:first-child > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 2px;
+  }
+  .main_player-name {
+    width: 100%;
+    text-align: center;
+    white-space: normal;
+    font-size: 1.1rem;
+  }
+  .main_time-stamp {
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  /* 7. Gender full-width centered */
+  span.gender,
+  .main_scoreboard > span.gender,
+  .main_scoreboard span.gender {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 1rem;
+    margin: 0 !important;
+  }
+
+  /* 8. Country full-width centered */
+  .main_player-country {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 80% !important;
+    text-align: center !important;
+    font-size: 1rem;
+    margin: 0;
+    padding-right: 0.6rem;
+  }
+
+  /* 9. Score controls */
+  .main_player-score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 8px 0;
+    background: #eef3fa;
+    border-radius: 6px;
+    gap: 12px;
+  }
+  .main_player-score span {
+    min-width: 30px;
+    text-align: center;
+    font-size: 1rem;
+  }
+  .main_player-score button {
+    width: 36px;
+    height: 36px;
+    font-size: 1.3rem;
+  }
+
+  /* 10. Delete button */
+  .main_scoreboard-btn-container {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 6px;
+    padding-right: 1rem;
+  }
+  .main_scoreboard-btn-container button {
+    width: 36px;
+    height: 36px;
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 481px) and (max-width: 720px) {
+  /* Form inputs and selects */
+  .main_form input,
+  .main_form select,
+  .main_form-submit-btn {
+    width: 90%;
+    padding: 14px 16px;
+    font-size: 1.1rem;
+    height: 52px;
+  }
+
+  /* Search & sort bar */
+  #searchInput,
+  #sortSelect {
+    width: 90%;
+    padding: 14px 16px;
+    font-size: 1.1rem;
+    height: 52px;
+  }
+
+  /* Main title */
+  .main_title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  /* Scoreboard layout */
+  .main_scoreboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 14px;
+  }
+
+  /* Rank and arrow column */
+  .main_scoreboard > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 6px;
+  }
+
+  .main_player-rank,
+  .arrow-up,
+  .arrow-down,
+  .arrow-placeholder {
+    text-align: center;
+  }
+
+  /* Player name and time */
+  .main_scoreboard > div:first-child > div:nth-child(2),
+  .main_player-name,
+  .main_time-stamp {
+    text-align: center;
+    width: 100%;
+  }
+
+  .main_player-name {
+    font-size: 1.2rem;
+  }
+
+  .main_time-stamp {
+    font-size: 0.85rem;
+  }
+
+  /* Gender */
+  .main_scoreboard span.gender {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 1.05rem;
+  }
+
+  /* Country */
+  .main_player-country {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 1.05rem;
+    padding-right: 0.7rem;
+  }
+
+  /* Score and buttons */
+  .main_player-score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: #eef3fa;
+    padding: 10px;
+    gap: 14px;
+    border-radius: 6px;
+  }
+
+  .main_player-score span {
+    font-size: 1.1rem;
+    min-width: 40px;
+    text-align: center;
+  }
+
+  .main_player-score button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+  }
+
+  /* Delete button */
+  .main_scoreboard-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 6px;
+  }
+
+  .main_scoreboard-btn-container button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+    margin: 0 auto;
+    padding-right: 1rem;
+  }
+}
+
+/* Toggle Button */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #ffffffcc;
+  color: #222;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.light-mode {
+  background: linear-gradient(135deg, #c9d6ff, #e2e2e2);
+  color: #333;
+}
+
+body.dark-mode {
+  background: linear-gradient(135deg, #232526, #414345);
+  color: #eee;
+}
+
+body.dark-mode main {
+  background: #2c2f33;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .main_scoreboard {
+  background: linear-gradient(120deg, #3a3f47, #2c2f33);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .theme-toggle {
+  background: #444;
+  color: #fff;
+}
+
+/* Dark mode adjustments */
+body.dark-mode .main_title {
+  color: #f1f1f1;
+}
+
+body.dark-mode .gender {
+  color: #ccc;
+}
+
+body.dark-mode .main_player-country {
+  color: #ddd;
+}
+
+body,
+main,
+.main_title,
+.gender,
+.main_player-country {
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+@media (max-width: 350px) {
+  .theme-toggle-btn {
+    top: 8px;
+    right: 6px;
+    font-size: 1.2rem;
+  }
+}

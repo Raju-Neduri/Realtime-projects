@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1 class="main_title">Leaderboard</h1>
+      <button id="themeToggle" class="theme-toggle-btn">🌓</button>
+      <!-- Form to add player -->
+      <form class="main_form" autocomplete="off">
+        <input
+          id="firstName"
+          type="text"
+          name="firstName"
+          placeholder="First Name"
+          required
+        />
+        <input
+          id="lastName"
+          type="text"
+          name="lastName"
+          placeholder="Last Name"
+          required
+        />
+        <select id="gender" name="gender" required>
+          <option value="" disabled selected>Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+        <input
+          id="country"
+          type="text"
+          name="country"
+          placeholder="Country"
+          required
+        />
+        <input
+          id="score"
+          type="number"
+          name="score"
+          placeholder="Score"
+          min="0"
+          required
+        />
+        <button type="submit" class="main_form-submit-btn">Add Player</button>
+      </form>
+
+      <!-- Error message -->
+      <div class="main_error-prompter"></div>
+
+      <!-- Search and sort controls -->
+      <div class="search-sort-container">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by name or country..."
+          aria-label="Search players"
+        />
+        <select id="sortSelect" aria-label="Sort players">
+          <option value="score">Sort by Score</option>
+          <option value="name">Sort by Name</option>
+          <option value="country">Sort by Country</option>
+        </select>
+      </div>
+
+      <!-- Scoreboard container -->
+      <div class="main_scoreboard-wrapper"></div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
