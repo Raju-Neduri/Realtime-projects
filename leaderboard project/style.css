@@ -652,3 +652,20 @@ main,
     font-size: 1.2rem;
   }
 }
+
+body.dark-mode .main_player-score span,
+body.light-mode .main_player-score span {
+  color: #222; /* Darker text for light background */
+}
+
+.main_player-score span {
+  transition: color 0.3s ease;
+}
+/* Score color in dark mode (toggle ON) */
+
+/* Force score color to white in dark mode for screens below 720px */
+@media (min-width: 721px) {
+  .dark-mode .main_player-score span {
+    color: white !important;
+  }
+}
