@@ -1,4 +1,47 @@
 .searchBar {
   height: 10vh;
-  background-color: black;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputfield {
+  outline: none;
+}
+
+.searchBarParentDiv {
+  width: 50%;
+  height: fit-content;
+  position: relative;
+}
+
+.inputfield {
+  width: 100%;
+  border-radius: 25px;
+  padding: 10px;
+  outline: none;
+  border: 0px;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+.searchIcon:hover {
+  cursor: pointer;
+}
+
+.mainContentParentDiv {
+  height: 90vh;
+  flex-direction: row;
+}
+
+.leftDiv {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
