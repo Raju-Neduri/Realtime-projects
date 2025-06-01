@@ -38,17 +38,15 @@
       }
 
       body {
-        /* Dramatic water, sunrise, and sunset effect: deep blue to gold */
+        /* Dramatic water/sky effect: deep blue, water blue, sky blue dominate; only yellow as a subtle accent */
         background: linear-gradient(
           120deg,
           #0a2342 0%,
-          /* deep water */ #005976 20%,
-          /* water blue */ #3151d1 45%,
-          /* sky blue */ #a259c6 65%,
-          /* magenta-violet */ #f09819 85%,
-          /* sunrise gold */ #ffd600 100% /* bright yellow sun */
+          /* deep blue (water) */ #164a8a 30%,
+          /* water blue */ #3151d1 65%,
+          /* sky blue */ #ffe066 100% /* yellow accent, no orange */
         );
-        background-size: 300% 300%;
+        background-size: 200% 200%;
         animation: animatedGradient 16s ease-in-out infinite;
         position: relative;
         font-family: "Poppins", "Comfortaa", sans-serif;
@@ -69,27 +67,13 @@
         pointer-events: none;
         background: radial-gradient(
             circle at 80% 10%,
-            rgba(255, 214, 0, 0.22) 0%,
-            rgba(255, 255, 255, 0.08) 40%,
-            transparent 70%
-          ),
-          radial-gradient(
-            circle at 60% 30%,
-            rgba(255, 255, 255, 0.18) 0%,
-            rgba(255, 255, 255, 0.08) 60%,
-            transparent 100%
+            rgba(255, 224, 102, 0.18) 0%,
+            /* yellow accent */ transparent 60%
           ),
           radial-gradient(
             circle at 50% 100%,
-            rgba(49, 81, 209, 0.18) 0%,
-            transparent 70%
-          ),
-          repeating-radial-gradient(
-            circle at 50% 100%,
-            rgba(255, 255, 255, 0.08) 0,
-            rgba(255, 255, 255, 0.01) 10px,
-            transparent 30px,
-            transparent 100px
+            rgba(49, 81, 209, 0.13) 0%,
+            /* sky blue */ transparent 70%
           );
         mix-blend-mode: lighten;
         filter: blur(10px);
@@ -107,18 +91,16 @@
         z-index: 1;
         background: radial-gradient(
             circle at 85% 8%,
-            rgba(255, 214, 0, 0.18) 0%,
-            rgba(255, 214, 0, 0.08) 30%,
-            transparent 60%
+            rgba(255, 224, 102, 0.13) 0%,
+            /* yellow accent */ transparent 60%
           ),
           radial-gradient(
             ellipse at 50% 100%,
-            rgba(49, 81, 209, 0.13) 0%,
-            rgba(10, 35, 66, 0.18) 40%,
-            transparent 80%
+            rgba(49, 81, 209, 0.1) 0%,
+            /* sky blue */ transparent 80%
           );
         opacity: 0.85;
-        animation: sunGlow 10s ease-in-out infinite;
+        animation: sunGlow 1.5s ease-in-out infinite;
       }
       @keyframes animatedGradient {
         0% {
@@ -133,22 +115,22 @@
       }
       @keyframes shimmerMove {
         0% {
-          background-position: 60% 30%, 60% 30%, 50% 100%, 50% 100%;
+          background-position: 80% 10%, 50% 100%;
         }
         50% {
-          background-position: 80% 10%, 70% 40%, 55% 90%, 55% 90%;
+          background-position: 60% 30%, 55% 90%;
         }
         100% {
-          background-position: 60% 30%, 60% 30%, 50% 100%, 50% 100%;
+          background-position: 80% 10%, 50% 100%;
         }
       }
       @keyframes sunGlow {
         0%,
         100% {
-          opacity: 0.85;
+          opacity: 0.15;
         }
         50% {
-          opacity: 1;
+          opacity: 0.1;
         }
       }
 
@@ -211,30 +193,50 @@
         top: 50%;
         transform: translateY(-50%);
         cursor: pointer;
-        width: 35px;
-        height: 35px;
+        width: 38px;
+        height: 38px;
         display: flex;
         align-items: center;
         justify-content: center;
         background: linear-gradient(
           135deg,
-          #ffd600 0%,
-          #f09819 40%,
-          #5db8f8 100%
+          #3151d1 0%,
+          /* sky blue */ #5db8f8 60%,
+          /* water blue */ #ffe066 100% /* yellow accent only */
         );
+        /* Dominant blue, water blue, yellow accent only */
         border: 2.5px solid #fff;
         border-radius: 50%;
-        padding: 8px;
-        transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
-        box-shadow: 0 2px 12px 0 rgba(49, 81, 209, 0.22),
-          0 0 8px 0 rgba(255, 214, 0, 0.18);
+        padding: 7px;
+        transition: background 0.3s, box-shadow 0.3s, border-color 0.3s,
+          transform 0.2s;
+        box-shadow: 0 2px 12px 0 rgba(49, 81, 209, 0.18),
+          0 0 8px 0 rgba(49, 81, 209, 0.13);
       }
 
       .searchIcon:hover {
-        background: linear-gradient(135deg, #5db8f8 0%, #ffd600 100%);
-        box-shadow: 0 4px 16px 0 rgba(49, 81, 209, 0.28),
-          0 0 16px 0 rgba(255, 214, 0, 0.22);
-        transform: translateY(-50%) scale(1.12);
+        background: linear-gradient(
+          135deg,
+          #164a8a 0%,
+          /* water blue */ #3151d1 70%,
+          /* sky blue */ #ffe066 100% /* yellow accent only */
+        );
+        border-color: #ffe066;
+        box-shadow: 0 6px 18px 0 rgba(49, 81, 209, 0.28),
+          0 0 18px 0 rgba(255, 224, 102, 0.18);
+        transform: translateY(-50%) scale(1.13);
+      }
+
+      .searchIcon:active {
+        filter: brightness(0.97) saturate(1.1);
+        transform: translateY(-50%) scale(0.98);
+      }
+
+      .searchIcon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: drop-shadow(0 1px 2px #5db8f888) drop-shadow(0 0 4px #3151d144);
       }
 
       /* Main content layout */
@@ -892,7 +894,7 @@
 
       /* Error message */
       .error-message {
-        background: linear-gradient(90deg, #ff512f 0%, #f09819 100%);
+        background: linear-gradient(90deg, #ff512f 0%, #ffd600 100%);
         border-radius: 16px;
         padding: 18px 24px;
         text-align: center;
