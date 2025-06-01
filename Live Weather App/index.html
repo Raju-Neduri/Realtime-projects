@@ -38,15 +38,7 @@
       }
 
       body {
-        /* Smoother, soft multi-color gradient background */
-        background: linear-gradient(
-          135deg,
-          #4f8cff 0%,
-          #a1c4fd 40%,
-          #c2e9fb 100%
-        );
-        background-repeat: no-repeat;
-        background-attachment: fixed;
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
         font-family: "Poppins", "Comfortaa", sans-serif;
         color: var(--text-light);
         min-height: 100vh;
@@ -56,6 +48,15 @@
       /* Search Bar */
       .searchBar {
         height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .searchBarParentDiv {
+        width: 100%;
+        max-width: 600px;
         height: fit-content;
         position: relative;
       }
