@@ -788,4 +788,8 @@ body {
   #comingFiveDaysTitle {
     font-size: medium;
   }
+
+  .riseandset {
+    margin-top: 0.6rem;
+  }
 }
