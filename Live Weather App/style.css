@@ -20,8 +20,8 @@ body {
     120deg,
     #0a2342 0%,
     /* deep blue (water) */ #164a8a 30%,
-    /* water blue */ #3151d1 65%,
-    /* sky blue */ #a38e3a 100% /* yellow accent, no orange */
+    /* water blue */ #15266a 65%,
+    /* sky blue */ #b8a042 100% /* yellow accent, no orange */
   );
   background-size: 200% 200%;
   animation: animatedGradient 16s ease-in-out infinite;
