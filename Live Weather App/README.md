@@ -1,68 +1,76 @@
 # 🌦️ Live Weather App
 
-A responsive web application that provides real-time weather information for any city using the [OpenWeatherMap API](https://openweathermap.org/api). Built with **HTML**, **CSS**, and **JavaScript**.
+A modern, responsive web application delivering real-time weather data for any city using the [OpenWeatherMap API](https://openweathermap.org/api). Built with **HTML5**, **CSS3**, and **JavaScript**.
 
-🔗 **Live Demo:** [Click here to view](https://raju-neduri.github.io/Realtime-projects/Live%20Weather%20App/)
+🔗 **Live Demo:** [View App](https://raju-neduri.github.io/Realtime-projects/Live%20Weather%20App/)
 
 ---
 
 ## 📸 Preview
 
-![Live Weather App Screenshot](screenshot.png)  
-_(Add a screenshot of your app and rename it to `screenshot.png`, or update the filename accordingly)_
+![Live Weather App Screenshot](./Images/image.png)
 
 ---
 
 ## 🚀 Features
 
-- 🔍 Search weather by city name
-- 🌡️ Display of real-time temperature, humidity, weather condition, and wind speed
-- 🎨 Dynamic weather icons based on current conditions
-- 📱 Fully responsive layout for mobile, tablet, and desktop
+- City-based weather search with instant results
+- Real-time temperature, humidity, weather conditions, and wind speed
+- Dynamic weather icons reflecting current conditions
+- Responsive design for seamless experience on all devices
 
 ---
 
-## 🛠️ Built With
+## 🛠️ Tech Stack
 
-- **HTML5** – Markup structure
-- **CSS3** – Styling and layout (responsive design)
-- **JavaScript (Vanilla)** – Core functionality and API integration
-- **OpenWeatherMap API** – Real-time weather data source
+- **HTML5** – Semantic markup
+- **CSS3** – Responsive, modern UI/UX
+- **JavaScript (ES6+)** – API integration, dynamic DOM updates
+- **OpenWeatherMap API** – Weather data provider
 
 ---
 
-## 📂 Folder Structure
+## 📂 Project Structure
 
-`Live-Weather-App/
+```
+Live Weather App/
 │
-├── index.html # Main HTML file
-├── style.css # App styling
-├── script.js # JavaScript logic (API calls, DOM updates)
-└── README.md # Project documentation (this file)`
+├── index.html        # Main HTML file
+├── style.css         # Styling and layout
+├── script.js         # Weather logic & API integration
+├── Images/
+│   └── image.png     # App screenshot
+└── README.md         # Documentation
+```
 
 ---
 
 ## 🌐 API Reference
 
-- **OpenWeatherMap API**: [https://openweathermap.org/api](https://openweathermap.org/api)
-  - Make sure to replace `"YOUR_API_KEY"` in `script.js` with your actual API key.
+- [OpenWeatherMap API](https://openweathermap.org/api)
+  - Replace `YOUR_API_KEY` in `script.js` with your OpenWeatherMap API key.
 
 ---
 
-## 📲 How to Use Locally
+## 🚀 Getting Started
 
-1. Clone the repository:
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/your-username/Live-Weather-App.git
    ```
-2. Open the project folder and replace **"YOUR_API_KEY"** in `script.js` with your OpenWeatherMap API key.
-
-3. Open `index.html` in your browser.
+2. **Configure API Key:**
+   - Open `script.js` and replace `YOUR_API_KEY` with your OpenWeatherMap API key.
+3. **Launch the App:**
+   - Open `index.html` in your browser.
 
 ---
 
-**📬 Feedback**  
-Have suggestions or want to contribute? Feel free to open an issue or pull request!
+## 🤝 Contributing
 
-**📌 License**  
-This project is open-source and available under the MIT License.
+Contributions, issues, and feature requests are welcome! Please open an issue or submit a pull request.
+
+---
+
+## 📄 License
+
+MIT License
