@@ -21,7 +21,7 @@ body {
     #0a2342 0%,
     /* deep blue (water) */ #164a8a 30%,
     /* water blue */ #21399c 65%,
-    /* sky blue */ #6f5d14 100% /* yellow accent, no orange */
+    /* sky blue */ #716636 100% /* yellow accent, no orange */
   );
   background-size: 200% 200%;
   animation: animatedGradient 16s ease-in-out infinite;
