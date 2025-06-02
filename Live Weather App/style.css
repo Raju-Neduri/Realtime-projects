@@ -19,7 +19,7 @@ body {
   background: linear-gradient(
     120deg,
     #0a2342 0%,
-    /* deep blue (water) */ #0c3d75 30%,
+    /* deep blue (water) */ #196ccb 30%,
     /* water blue */ #163e79 65%,
     /* sky blue */ #a5923b 100% /* yellow accent, no orange */
   );
