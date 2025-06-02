@@ -20,8 +20,8 @@ body {
     120deg,
     #0a2342 0%,
     /* deep blue (water) */ #164a8a 30%,
-    /* water blue */ #15266a 65%,
-    /* sky blue */ #b8a042 100% /* yellow accent, no orange */
+    /* water blue */ #233478 65%,
+    /* sky blue */ #8c751b 100% /* yellow accent, no orange */
   );
   background-size: 200% 200%;
   animation: animatedGradient 16s ease-in-out infinite;
@@ -866,42 +866,43 @@ body::after {
 
 /* Error message */
 .error-message {
-  background: linear-gradient(90deg, #ff512f 0%, #ffd600 100%);
+  background: linear-gradient(90deg, #2b3a67 0%, #3151d1 60%, #ffe066 100%);
   border-radius: 16px;
-  padding: 18px 24px;
+  padding: 20px 28px;
   text-align: center;
-  margin: 24px 0 18px 0;
+  margin: 28px 0 20px 0;
   display: none;
   color: #fff;
-  font-size: 1.15rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 24px 0 rgba(255, 88, 88, 0.18),
-    0 1.5px 8px 0 rgba(240, 152, 25, 0.12), 0 0 16px 0 rgba(255, 214, 0, 0.13);
-  border: 2.5px solid #ffd600;
+  font-size: 1.18rem;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  box-shadow: 0 6px 28px 0 rgba(49, 81, 209, 0.22),
+    0 2px 10px 0 rgba(49, 81, 209, 0.13), 0 0 20px 0 rgba(255, 224, 102, 0.13);
+  border: 2.5px solid #3151d1;
   position: relative;
   z-index: 10;
   animation: errorPop 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
     errorPulse 1.5s infinite alternate;
   overflow: hidden;
+  text-shadow: 0 2px 8px #164a8a44, 0 0 2px #ffe06688;
 }
 .error-message::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
   pointer-events: none;
   z-index: 1;
 }
 @keyframes errorPulse {
   0% {
-    box-shadow: 0 0 0 0 #ffd60044;
-    border-color: #ffd600;
+    box-shadow: 0 0 0 0 #3151d144;
+    border-color: #3151d1;
   }
   100% {
-    box-shadow: 0 0 16px 8px #ffd60055;
-    border-color: #ff512f;
+    box-shadow: 0 0 20px 10px #ffe06655;
+    border-color: #ffe066;
   }
 }
 
